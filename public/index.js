@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       submitButton.innerHTML = `<span class="spinner-border spinner-border-sm"></span> Sending...`;
 
       try {
-        const response = await fetch('/api/contact', {
+        const response = await fetch('https://myportfolio-theta-lime-92.vercel.app/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, email, message }),
