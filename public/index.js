@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       submitButton.innerHTML = `<span class="spinner-border spinner-border-sm"></span> Sending...`;
 
       try {
-        const response = await fetch('http://localhost:3000//api/contact', {
+        const response = await fetch('https://backend-1-w12z.onrender.com/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, email, message }),
