@@ -253,15 +253,16 @@
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="section-padding">
+ <!-- Experience -->
+<section id="experience" class="section-padding">
   <div class="container">
     <div class="section-title text-center mb-5">
       <span class="subtitle">Internships</span>
       <h2>Experience</h2>
     </div>
-    <div class="row g-4">
+    <div class="row justify-content-center">
       <div class="col-md-6">
-        <div class="experience-card p-4 d-flex align-items-center gap-3 shadow-sm rounded-4 transition">
+        <div class="experience-card p-4 d-flex align-items-center gap-3 shadow-sm rounded-4 fade-in-up">
           <img src="assets/1739603734227.jpg" alt="Growthlink Logo" class="company-logo" />
           <div>
             <h5 class="mb-1">Growthlink Intern</h5>
@@ -276,7 +277,7 @@
   </div>
 </section>
 
-<!-- CSS -->
+<!-- CSS for Experience -->
 <style>
   .experience-card {
     background: #ffffff;
@@ -284,15 +285,44 @@
     cursor: pointer;
   }
   .experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
   .company-logo {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     object-fit: contain;
+    border-radius: 10px;
+  }
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
+  }
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
+
+<!-- Scroll Animation JS -->
+<script>
+  const faders = document.querySelectorAll('.fade-in-up');
+  const appearOptions = { threshold: 0.2 };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('animate');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
 
        <!--    <div class="col-md-6">
           <div class="experience-card">
