@@ -138,7 +138,18 @@ document.addEventListener('DOMContentLoaded', () => {
     appearOnScroll.observe(fader);
   });
 
+ const aboutFaders = document.querySelectorAll('.fade-in-up');
+  const aboutObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('animate');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.2 });
 
+  aboutFaders.forEach(fader => {
+    aboutObserver.observe(fader);
+  });
 
 
 
