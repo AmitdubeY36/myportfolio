@@ -308,21 +308,7 @@
 </style>
 
 <!-- Scroll Animation JS -->
-<script>
-  const faders = document.querySelectorAll('.fade-in-up');
-  const appearOptions = { threshold: 0.2 };
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('animate');
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
 
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
-</script>
 
        <!--    <div class="col-md-6">
           <div class="experience-card">
