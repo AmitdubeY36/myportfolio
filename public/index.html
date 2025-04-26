@@ -71,26 +71,33 @@
 
   <!-- About -->
   <!-- About -->
+<!-- About -->
 <section id="about" class="section-padding">
   <div class="container">
+    
+    <!-- Section Title -->
     <div class="section-title about-animate text-center">
       <span class="subtitle">Get To Know</span>
       <h2>About Me</h2>
     </div>
-    <div class="row align-items-center gx-0 gy-0">
+
+    <!-- About Content -->
+    <div class="row align-items-center gy-5">
       
       <!-- Image -->
-      <div class="col-md-5 about-animate d-flex justify-content-center">
-        <img 
-          src="assets/WhatsApp Image 2025-04-13 at 12.29.38 PM.jpeg" 
-          alt="About Me"
-          class="img-fluid rounded shadow"
-          style="width: 260px; max-width: 100%; height: auto; object-fit: cover;"
-        />
+      <div class="col-12 col-md-5 d-flex justify-content-center">
+        <div class="about-image-wrapper">
+          <img 
+            src="assets/WhatsApp Image 2025-04-13 at 12.29.38 PM.jpeg" 
+            alt="About Me"
+            class="img-fluid rounded shadow about-img fade-in-up"
+            style="width: 260px; max-width: 100%; height: auto; object-fit: cover;"
+          />
+        </div>
       </div>
 
       <!-- Text -->
-      <div class="col-md-7 about-animate">
+      <div class="col-12 col-md-7 about-animate">
         <p class="mb-2">
           I’m an aspiring full-stack developer passionate about building efficient and scalable web applications. 
           Currently pursuing BCA and working on strengthening both front-end and back-end skills.
@@ -106,6 +113,31 @@
     </div>
   </div>
 </section>
+
+<!-- CSS -->
+<style>
+  .about-img {
+    transition: all 0.6s ease;
+  }
+  .about-img:hover {
+    transform: scale(1.05);
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
+  }
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<!-- Scroll Animation JS -->
+
 
   <!-- Skills -->
   <section id="skills" class="section-padding">
